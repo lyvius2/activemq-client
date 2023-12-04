@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  rabbitmq:
+    image: apache/activemq-artemis:2.31.2
+    container_name: activemq-local-dev
+    ports:
+      - "61616:61616"
+      - "18161:8161"
+    expose:
+      - "61616"
+      - "8161"
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    environment:
+      - ARTEMIS_USER=user
+      - ARTEMIS_PASSWORD=pwd1234!
+      - ANONYMOUS_LOGIN=false
+      - TZ=Asia/Seoul
+    networks:
+      - active-q
+    mem_limit: "256mb"
+
+networks:
+  active-q:
+    driver: bridge
