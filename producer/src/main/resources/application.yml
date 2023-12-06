@@ -1,0 +1,20 @@
+server:
+  port: 7071
+
+spring:
+  application:
+    name: Producer for ActiveMQ
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health, info, metrics
+  observations:
+    key-values:
+      application: ${spring.application.name}
