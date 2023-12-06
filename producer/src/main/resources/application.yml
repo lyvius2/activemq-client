@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: Producer for ActiveMQ
+  artemis:
+    broker-url: tcp://127.0.0.1:61616
+    mode: native
+    user: user
+    password: pwd1234!
 
 management:
   endpoint:
