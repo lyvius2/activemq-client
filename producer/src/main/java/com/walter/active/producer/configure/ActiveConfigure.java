@@ -16,6 +16,7 @@ public class ActiveConfigure {
 		messageConverter.setTypeIdPropertyName("_typeId");
 
 		final Map<String, Class<?>> typeIdMappings = new HashMap<>();
+		typeIdMappings.put("text", String.class);
 		typeIdMappings.put("product", Product.class);
 		messageConverter.setTypeIdMappings(typeIdMappings);
 		return messageConverter;

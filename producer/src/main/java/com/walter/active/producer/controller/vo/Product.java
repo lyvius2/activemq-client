@@ -11,9 +11,6 @@ import java.io.Serializable;
 @Setter
 @ToString
 public class Product implements Serializable {
-	@Schema(description = "일련번호", example = "1")
-	private long seq;
-
 	@Schema(description = "콘솔", example = "Play Station 4")
 	private String consoleName;
 

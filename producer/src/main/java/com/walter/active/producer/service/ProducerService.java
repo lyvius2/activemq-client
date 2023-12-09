@@ -1,5 +1,6 @@
 package com.walter.active.producer.service;
 
+import org.apache.activemq.artemis.jms.client.ActiveMQTopic;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,12 @@ public class ProducerService {
 	}
 
 	public void sendToQueue(String queueName, Object object) {
+		jmsTemplate.setPubSubDomain(false);
 		jmsTemplate.convertAndSend(queueName, object);
+	}
+
+	public void sendToTopic(String topicName, Object object) {
+		jmsTemplate.setPubSubDomain(true);
+		jmsTemplate.convertAndSend(new ActiveMQTopic(topicName), object);
 	}
 }
