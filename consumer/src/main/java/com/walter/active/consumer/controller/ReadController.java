@@ -25,4 +25,10 @@ public class ReadController {
 	public List<ProductV1> getConsoles() {
 		return consumeService.getProducts();
 	}
+
+	@Operation(summary = "Status API", description = "Broadcast 된 상태값 확인")
+	@GetMapping("/status")
+	public boolean getStatus() {
+		return consumeService.isOn();
+	}
 }

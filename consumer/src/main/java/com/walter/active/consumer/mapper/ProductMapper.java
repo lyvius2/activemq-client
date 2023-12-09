@@ -12,7 +12,6 @@ public interface ProductMapper {
 	ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
 	@Mappings({
-			@Mapping(source = "seq", target = "id"),
 			@Mapping(source = "consoleName", target = "name")
 	})
 	Product toEntity(ProductV1 productV1);
