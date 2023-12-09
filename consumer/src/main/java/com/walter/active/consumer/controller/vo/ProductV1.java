@@ -9,7 +9,6 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@ToString
 public class ProductV1 implements Serializable {
 	@Schema(description = "일련번호", example = "1")
 	private long seq;
@@ -19,4 +18,12 @@ public class ProductV1 implements Serializable {
 
 	@Schema(description = "제조사", example = "SONY")
 	private String manufacturer;
+
+	@Override
+	public String toString() {
+		return "ProductV1{" +
+				"consoleName='" + consoleName + '\'' +
+				", manufacturer='" + manufacturer + '\'' +
+				'}';
+	}
 }
