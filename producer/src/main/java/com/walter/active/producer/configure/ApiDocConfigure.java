@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class ApiDocConfigure {
 	@Bean
 	public OpenAPI openAPI() {
-		final Info info = new Info().title("RabbitMQ Producer API")
+		final Info info = new Info().title("ActiveMQ Producer API")
 									.version("0.1");
 		final Server server = new Server().url("/");
 		final SecurityScheme securityScheme = new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("basic");
